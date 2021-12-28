@@ -1,4 +1,8 @@
 @extends('layouts.main')
 @section('container')
-    <h1>Blog social coding</h1>
-    @endsection
+    @foreach($blogs as $blog)
+    <h2>{{ $blog["title"] }}</h2>
+    <h5>Oleh: {{ $blog["author"] }}</h5>
+    <p>{{ $blog["body"] }}</p>
+    @endforeach
+@endsection
