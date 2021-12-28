@@ -47,3 +47,10 @@ Route::get('/blog', function () {
         "blogs" => $blog_posts
     ]);
 });
+
+// halaman single post
+Route::get('blog/{slug}', function($slug) {
+    return view('posts',[
+        "title" => "Single post"
+    ]);
+});
