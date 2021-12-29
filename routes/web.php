@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,43 +15,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home',[
-        "title" => "home"]);
+    return view('home', [
+        "title" => "home"
+    ]);
 });
 
 Route::get('/about', function () {
-    return view('about',[
+    return view('about', [
         "title" => "about",
-      "nama" => "gunadermawan",
-      "email" => "socialcoding@gmail.com",
-      "image" => "gunadermawan.JPG"
+        "nama" => "gunadermawan",
+        "email" => "socialcoding@gmail.com",
+        "image" => "gunadermawan.JPG"
     ]);
 });
 
 Route::get('/blog', function () {
-    $blog_posts = [
-    [
-        "title" => "Kotlin",
-        "slug" => "kotlin",
-        "author" => "Guna Dermawan",
-        "body" => "  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, voluptatum dignissimos. Molestiae expedita numquam illum possimus veritatis, blanditiis laboriosam aliquid amet similique quas provident hic ex qui sapiente rerum ea totam libero! Corrupti vero voluptas quidem voluptate suscipit provident impedit esse distinctio inventore magnam, nemo molestias quae ipsum dicta fugit culpa nesciunt. Id laudantium commodi, corporis cumque, corrupti totam itaque cum officia molestiae, beatae unde dolores rem ratione praesentium soluta pariatur iure doloremque est. Pariatur molestiae vel debitis illo beatae?"
-    ],
-    [
-        "title" => "Kotlin android",
-        "slug" => "kotlin-android",
-        "author" => "Guna Dermawan",
-        "body" => " Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, voluptatum dignissimos. Molestiae expedita numquam illum possimus veritatis, blanditiis laboriosam aliquid amet similique quas provident hic ex qui sapiente rerum ea totam libero! Corrupti vero voluptas quidem voluptate suscipit provident impedit esse distinctio inventore magnam, nemo molestias quae ipsum dicta fugit culpa nesciunt. Id laudantium commodi, corporis cumque, corrupti totam itaque cum officia molestiae, beatae unde dolores rem ratione praesentium soluta pariatur iure doloremque est. Pariatur molestiae vel debitis illo beatae? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate"
-    ]
-];
-    return view('blog',[
+    return view('blog', [
         "title" => "blog",
-        "blogs" => $blog_posts
+        "blogs" => Post::all()
     ]);
 });
 
 // halaman single post
-Route::get('blog/{slug}', function($slug) {
-    return view('posts',[
-        "title" => "Single post"
+Route::get('blog/{slug}', function ($slug) {
+    return view('posts', [
+        "title" => "Single post",
+        "post" => Post::find($slug)
     ]);
 });
