@@ -32,4 +32,4 @@ Route::get('/about', function () {
 
 Route::get('/blog', [PostController::class, 'index']);
 // halaman single post
-Route::get('blog/{slug}', [PostController::class, 'show']);
+Route::get('blog/{blogs:slug}', [PostController::class, 'show']);
