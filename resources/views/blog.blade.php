@@ -1,9 +1,15 @@
 @extends('layouts.main')
 @section('container')
     @foreach ($blogs as $blog)
-        <h2><a href="/blog/{{ $blog->slug }}">
-                {{ $blog->title }}
-            </a></h2>
-        <p>{{ $blog->exerpt }}</p>
+        <article class="mb-5 border-bottom pb-4">
+            <h2><a href="/blog/{{ $blog->slug }}" class="text-decoration-none">
+                    {{ $blog->title }}
+                </a></h2>
+            <p>Oleh: Guna Dermawan </p>
+            <p>Kategori: <a href="/categories/{{ $blog->category->slug }}"
+                    class="text-decoration-none">{{ $blog->category->name }}</a></p>
+            <p>{{ $blog->exerpt }}</p>
+            <a href="/blog/{{ $blog->slug }}" class="text-decoration-none">Read more...</a>
+        </article>
     @endforeach
 @endsection
