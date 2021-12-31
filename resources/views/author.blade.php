@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('container')
-    @foreach ($blogs as $blog)
+    @foreach ($posts as $blog)
         <article class="mb-5 border-bottom pb-4">
             <h2><a href="/blog/{{ $blog->slug }}" class="text-decoration-none">
                     {{ $blog->title }}
