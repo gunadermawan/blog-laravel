@@ -5,7 +5,7 @@
             <h2><a href="/blog/{{ $blog->slug }}" class="text-decoration-none">
                     {{ $blog->title }}
                 </a></h2>
-            <p>Oleh: Guna Dermawan </p>
+            <p>Oleh: <a href="#" class="text-decoration-none">{{ $blog->user->name }}</a> </p>
             <p>Kategori: <a href="/categories/{{ $blog->category->slug }}"
                     class="text-decoration-none">{{ $blog->category->name }}</a></p>
             <p>{{ $blog->exerpt }}</p>
