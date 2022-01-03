@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('container')
-    <h1>Home | Social Coding</h1>
+    <h1 class="pt-5">Home | Social Coding</h1>
 @endsection
