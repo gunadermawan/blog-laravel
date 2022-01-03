@@ -19,13 +19,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home', [
-        "title" => "home"
+        "title" => "home",
+        'active' => 'home'
     ]);
 });
 
 Route::get('/about', function () {
     return view('about', [
         "title" => "about",
+        'active' => 'about',
         "nama" => "gunadermawan",
         "email" => "socialcoding@gmail.com",
         "image" => "gunadermawan.JPG"
@@ -39,6 +41,7 @@ Route::get('blog/{blogs:slug}', [PostController::class, 'show']);
 Route::get('/categories', function () {
     return view('categories', [
         'title' => 'Post Categories',
+        'active' => 'categories',
         'categories' => Category::all()
     ]);
 });
@@ -46,6 +49,7 @@ Route::get('/categories', function () {
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
         'title' => "Post By Category : $category->name",
+        'active' => 'categories',
         'posts' => $category->posts->load('category', 'user')
     ]);
 });

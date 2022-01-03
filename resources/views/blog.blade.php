@@ -1,7 +1,6 @@
 @extends('layouts.main')
 @section('container')
     <h1 class="mb-5">{{ $title }}</h1>
-
     @if ($blogs->count())
         <div class="card mb-3">
             <img src="https://source.unsplash.com/1200x400?{{ $blogs[0]->category->name }}" class="card-img-top"
