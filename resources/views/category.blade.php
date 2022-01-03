@@ -4,6 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6 mb-3">
             <form action="/blog">
+
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search..." name="search"
                         value="{{ request('search') }}">

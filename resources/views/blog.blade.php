@@ -21,7 +21,7 @@
                         class="text-decoration-none text-dark">{{ $blogs[0]->title }}</a></h3>
                 <small class="text-muted">
                     <p>Oleh: <a href="#" class="text-decoration-none">{{ $blogs[0]->user->name }}</a>
-                        Kategori: <a href="/categories/{{ $blogs[0]->category->slug }}"
+                        Kategori: <a href="/blog?category={{ $blogs[0]->category->slug }}"
                             class="text-decoration-none">{{ $blogs[0]->category->name }}</a> updated
                         on: {{ $blogs[0]->created_at->diffForHumans() }} </p>
                 </small>
@@ -38,7 +38,7 @@
                         <div class="card mb-3">
                             <div class="position-absolute bg-dark px-3 py-2 text-white"
                                 style="background-color: rgba(0, 0, 0, 0.5)"><a
-                                    href="/categories/{{ $blog->category->slug }}"
+                                    href="/blog?category={{ $blog->category->slug }}"
                                     class="text-decoration-none text-white">{{ $blog->category->name }}</a>
                             </div>
                             <img src=" https://source.unsplash.com/500x400?{{ $blog->category->name }}"
