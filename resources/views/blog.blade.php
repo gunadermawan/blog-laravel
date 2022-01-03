@@ -7,7 +7,7 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search..." name="search"
                         value="{{ request('search') }}">
-                    <button class="btn btn-danger" type="submit">Search</button>
+                    <button class="btn btn-dark" type="submit">Search</button>
                 </div>
             </form>
         </div>
@@ -26,7 +26,7 @@
                         on: {{ $blogs[0]->created_at->diffForHumans() }} </p>
                 </small>
                 <p class="card-text">{{ $blogs[0]->exerpt }}</p>
-                <a href="/blog/{{ $blogs[0]->slug }}" class="text-decoration-none btn btn-primary">Read more</a>
+                <a href="/blog/{{ $blogs[0]->slug }}" class="text-decoration-none btn btn-dark">Read more</a>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                                         updated on: {{ $blog->created_at->diffForHumans() }} </p>
                                 </small>
                                 <p class="card-text">{{ $blog->exerpt }}</p>
-                                <a href="/blog/{{ $blog->slug }}" class="btn btn-primary">Read more</a>
+                                <a href="/blog/{{ $blog->slug }}" class="btn btn-dark">Read more</a>
                             </div>
                         </div>
                     </div>
