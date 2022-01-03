@@ -29,7 +29,7 @@
                     <div class="card mb-3">
                         <div class="position-absolute bg-dark px-3 py-2 text-white"
                             style="background-color: rgba(0, 0, 0, 0.5)"><a
-                                href="/categories/{{ $blogs[0]->category->slug }}"
+                                href="/categories/{{ $blog->category->slug }}"
                                 class="text-decoration-none text-white">{{ $blog->category->name }}</a>
                         </div>
                         <img src=" https://source.unsplash.com/500x400?{{ $blog->category->name }}"
