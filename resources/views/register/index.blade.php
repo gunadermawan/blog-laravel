@@ -9,7 +9,7 @@
                     @csrf
                     <div class="form-floating">
                         <input type="text" name="name" class="form-control rounded-top @error('name')is-invalid @enderror"
-                            id="name" placeholder="name">
+                            id="name" placeholder="name" required value="{{ old('name') }}">
                         @error('name')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-floating">
                         <input type="text" name="username" class="form-control @error('username')is-invalid @enderror"
-                            id="username" placeholder="Username">
+                            id="username" placeholder="Username" required value="{{ old('username') }}">
                         @error('username')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-floating">
                         <input type="email" name="email" class="form-control @error('email')is-invalid @enderror" id="email"
-                            placeholder="name@example.com">
+                            placeholder="name@example.com" required value="{{ old('email') }}">
                         @error('email')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
@@ -40,7 +40,7 @@
                     <div class="form-floating">
                         <input type="password" name="password"
                             class="form-control rounded-bottom @error('password')is-invalid @enderror" id="password"
-                            placeholder="Password">
+                            placeholder="Password" required>
                         @error('password')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
