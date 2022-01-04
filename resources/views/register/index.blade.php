@@ -12,7 +12,7 @@
                     </div>
                     <div class="form-floating">
                         <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-                        <label for="username">username</label>
+                        <label for="username">U sername</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
