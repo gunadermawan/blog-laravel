@@ -5,14 +5,15 @@
         <div class="col-lg-5">
             <main class="form-registration mt-5 ">
                 <h1 class="h3 mb-3 fw-normal text-center">Registration</h1>
-                <form>
+                <form action="/register" method="POST">
+                    @csrf
                     <div class="form-floating">
                         <input type="text" name="name" class="form-control rounded-top" id="name" placeholder="name">
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating">
                         <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-                        <label for="username">U sername</label>
+                        <label for="username">Username</label>
                     </div>
                     <div class="form-floating">
                         <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">

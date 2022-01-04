@@ -13,4 +13,9 @@ class RegisterController extends Controller
             'active' => 'register'
         ]);
     }
+
+    public function store()
+    {
+        return request()->all();
+    }
 }
