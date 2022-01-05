@@ -6,7 +6,7 @@
     <div class="table-responsive">
         <a href="/dashboard/posts/create" class="btn btn-outline-primary">New Post</a>
         @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
                 {{ session('success') }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
