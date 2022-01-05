@@ -9,7 +9,7 @@
                     @csrf
                     <div class="form-floating">
                         <input type="text" name="name" class="form-control rounded-top @error('name')is-invalid @enderror"
-                            id="name" placeholder="name" required value="{{ old('name') }}">
+                            id="name" placeholder="name" autofocus required value="{{ old('name') }}">
                         @error('name')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
