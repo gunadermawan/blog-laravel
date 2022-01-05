@@ -23,6 +23,11 @@
                     @endforeach
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <input id="body" type="hidden" name="body">
+                <trix-editor input="body"></trix-editor>
+            </div>
             <button type="submit" class="btn btn-primary">Create Post</button>
         </form>
     </div>
@@ -33,6 +38,9 @@
             fetch('/dashboard/posts/checkSlug?title=' + title.value)
                 .then(response => response.json())
                 .then(data => slug.value = data.slug)
+        });
+        document.addEventListener('trix-file-accept', function(e) {
+            e.preventDefault();
         })
     </script>
 @endsection
