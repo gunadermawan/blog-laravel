@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-md-8">
-                <h2 class="mb-3">{{ $post->title }}</h2>
+                <h2 class="mb-3 pt-5">{{ $post->title }}</h2>
                 <p>Oleh: <a href="#" class="text-decoration-none">{{ $post->user->name }}</a>
                 </p>
                 <p>Kategori: <a href="/categories/{{ $post->category->slug }}"
@@ -14,7 +14,7 @@
                 <article class="my-3 fs-5">
                     {!! $post->body !!}
                 </article>
-                <a href="/blog" class="mt-3 ">Back</a>
+                <a href="/blog" class="mt-3 btn btn-outline-dark">Back</a>
             </div>
         </div>
     </div>
