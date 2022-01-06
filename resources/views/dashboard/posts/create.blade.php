@@ -39,8 +39,8 @@
                 </select>
             </div>
             <div class="mb-3">
-                <label for="formFile" class="form-label">Post Image</label>
-                <input class="form-control" type="file" id="formFile">
+                <label for="image" class="form-label">Post Image</label>
+                <input class="form-control" type="file" id="image" name="image">
             </div>
             <div class="mb-3">
                 <label for="body" class="form-label">Body</label>
