@@ -36,8 +36,6 @@
                 <a href="/blog/{{ $blogs[0]->slug }}" class="text-decoration-none btn btn-dark">Read more</a>
             </div>
         </div>
-
-
         <div class="container">
             <div class="row">
                 @foreach ($blogs as $blog)
