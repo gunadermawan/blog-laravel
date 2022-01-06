@@ -14,8 +14,15 @@
     </div>
     @if ($blogs->count())
         <div class="card mb-3">
-            <img src="https://source.unsplash.com/1200x400?{{ $blogs[0]->category->name }}" class="card-img-top"
-                alt="{{ $blogs[0]->category->name }}">
+            @if ($blogs[0]->image)
+                <div class="" style="max-height: 400px; overflow: hidden">
+                    <img src="{{ asset('storage/' . $blogs[0]->image) }}" alt="{{ $blogs[0]->category->name }}"
+                        class="img-fluid">
+                </div>
+            @else
+                <img src="https://source.unsplash.com/1200x400?{{ $blogs[0]->category->name }}" class="card-img-top"
+                    alt="{{ $blogs[0]->category->name }}">
+            @endif
             <div class="card-body text-center">
                 <h3 class="card-title"><a href="/blog/{{ $blogs[0]->slug }}"
                         class="text-decoration-none text-dark">{{ $blogs[0]->title }}</a></h3>
@@ -41,8 +48,13 @@
                                     href="/blog?category={{ $blog->category->slug }}"
                                     class="text-decoration-none text-white">{{ $blog->category->name }}</a>
                             </div>
-                            <img src=" https://source.unsplash.com/500x400?{{ $blog->category->name }}"
-                                class="card-img-top" alt="{{ $blog->category->name }}">
+                            @if ($blog->image)
+                                <img src="{{ asset('storage/' . $blog->image) }}" alt="{{ $blog->category->name }}"
+                                    class="img-fluid">
+                            @else
+                                <img src=" https://source.unsplash.com/500x400?{{ $blog->category->name }}"
+                                    class="card-img-top" alt="{{ $blog->category->name }}">
+                            @endif
                             <div class="card-body">
                                 <h5 class="card-title"> {{ $blog->title }}</h5>
                                 <small class="text-muted">
